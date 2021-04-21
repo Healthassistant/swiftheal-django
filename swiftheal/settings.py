@@ -85,15 +85,15 @@ WSGI_APPLICATION = 'swiftheal.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-    }
-}
+DATABASES = {'default':None}
+if env=='dev':
+    DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+        }
 if env == 'remote':
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql',
