@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "swiftheal-django.herokuapp.com"]
 
 INSTALLED_APPS = [
     "authentication.apps.AuthenticationConfig",
+    "doctor.apps.DoctorConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -158,3 +159,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "https://swiftheal.herokuapp.com",
 ]
+
+# MEDIA FILES
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

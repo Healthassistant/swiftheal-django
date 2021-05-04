@@ -20,7 +20,7 @@ def login(request):
 
         if ((timezone.now() - token.created).total_seconds()) > 7 * 24 * 60 * 60:
             token.delete()
-            return Response({"message": "session has expired"}, status=401)
+            return Response({"message": "Session has expired"}, status=401)
 
         return Response(
             {
@@ -31,4 +31,4 @@ def login(request):
             status=200,
         )
     else:
-        return Response({"message": "Username or password is incorrect"}, status=401)
+        return Response({"message": "Username or Password is incorrect"}, status=401)
