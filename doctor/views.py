@@ -11,10 +11,11 @@ def top_doctors(request):
     serializer = TopDoctorSerializer(doctors, many=True)
     return Response(serializer.data)
 
+
 @api_view(["POST"])
 def doctor_signup(request):
     serializer = DoctorSerializer(data=request.data)
     if serializer.is_valid():
-        serializer.save();
+        serializer.save()
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)

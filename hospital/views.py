@@ -9,6 +9,6 @@ from rest_framework.response import Response
 def hospital_signup(request):
     serializer = HospitalSerializer(data=request.data)
     if serializer.is_valid():
-        serializer.save();
+        serializer.save()
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
