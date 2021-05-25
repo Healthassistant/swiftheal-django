@@ -41,6 +41,7 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "swiftheal-django.herokuapp.com"]
 INSTALLED_APPS = [
     "authentication.apps.AuthenticationConfig",
     "doctor.apps.DoctorConfig",
+    "hospital.apps.HospitalConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

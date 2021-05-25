@@ -1,3 +1,4 @@
+from hospital.models import Hospital
 from django.db import models
 
 # Create your models here.
@@ -19,7 +20,7 @@ class Doctor(models.Model):
     Year_of_Experience = models.IntegerField()
     Type_of_Practice = models.CharField(max_length=20)
     Designation = models.CharField(max_length=50)
-    Hospital_ID = models.CharField(max_length=10)
+    Hospital_ID = models.ForeignKey(Hospital,on_delete=models.CASCADE)
     Photo = models.ImageField(upload_to="doctor_profile", null=True, blank=True)
 
     def __str__(self):
